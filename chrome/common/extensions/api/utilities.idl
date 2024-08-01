@@ -1,0 +1,25 @@
+// Copyright 2024 Shift
+
+// Shift API: <code>chrome.utilities</code>.
+[implemented_in="chrome/browser/extensions/api/utilities_shift/utilities_api_shift.h"]
+namespace utilities {
+
+  callback GetVersiondCallback = void (DOMString version);
+  callback IsFirstRunCallback = void (boolean first);
+
+  interface Functions {
+      // Returns the current version of Chromium as a string.
+      static void getVersion(GetVersiondCallback callback);
+
+      // Returns a boolean indicating whether the current run is the first run of the browser.
+      static void isFirstRun(IsFirstRunCallback call);
+  };
+
+  // Events supported by utilities API. These events are broadcasted.
+  // broadcasting to applications that can use utilities Event API.
+  interface Events {
+      // Called when the content of the clipboard changes.
+      static void onClipboardContentChanged();
+  };
+
+};

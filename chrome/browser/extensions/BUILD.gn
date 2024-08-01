@@ -756,6 +756,16 @@ source_set("extensions") {
     ]
   }
 
+  # Shift browser
+  if (is_shift_browser) {
+   sources += [
+    "api/utilities_shift/utilities_api_shift.h",
+    "api/utilities_shift/utilities_api_shift.cc",
+    "api/utilities_shift/utilities_event_router_shift.h",
+    "api/utilities_shift/utilities_event_router_shift.cc",
+   ]
+  }
+
   configs += [
     "//build/config:precompiled_headers",
     "//build/config/compiler:wexit_time_destructors",

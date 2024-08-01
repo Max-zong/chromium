@@ -4116,6 +4116,10 @@ if (!is_android) {
         "../browser/user_bypass/user_bypass_web_contents_observer_browsertest.cc",
       ]
 
+      if (is_shift_browser) {
+        sources += [ "../browser/extensions/api/utilities_shift/utilities_apitest_shift.cc", ]
+      }
+
       if (is_win) {
         data_deps += [
           "//chrome/browser/extensions/api:native_messaging_test_echo_&_host",

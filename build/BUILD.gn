@@ -53,6 +53,13 @@ buildflag_header("branding_buildflags") {
   } else {
     flags += [ "GOOGLE_CHROME_FOR_TESTING_BRANDING=0" ]
   }
+
+  # Shift browser
+  if (is_shift_browser) {
+    flags += [ "IS_SHIFT_BROWSER=1" ]
+  } else {
+    flags += [ "IS_SHIFT_BROWSER=0" ]
+  }
 }
 
 buildflag_header("blink_buildflags") {

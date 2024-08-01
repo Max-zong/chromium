@@ -90,6 +90,12 @@ json_features("api_features") {
   feature_type = "APIFeature"
   method_name = "AddChromeAPIFeatures"
   sources = [ "_api_features.json" ]
+
+  # Shift browser
+  if (is_shift_browser) {
+    sources += [ "_api_features_shift.json" ]
+  }
+
   visibility = [ ":extensions_features" ]
 }
 
@@ -97,6 +103,12 @@ json_features("permission_features") {
   feature_type = "PermissionFeature"
   method_name = "AddChromePermissionFeatures"
   sources = [ "_permission_features.json" ]
+
+  # Shift browser
+  if (is_shift_browser) {
+    sources += [ "_permission_features_shift.json" ]
+  }
+
   visibility = [ ":extensions_features" ]
 }
 

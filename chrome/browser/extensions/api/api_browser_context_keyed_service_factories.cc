@@ -5,6 +5,7 @@
 #include "chrome/browser/extensions/browser_context_keyed_service_factories.h"
 
 #include "build/build_config.h"
+#include "build/branding_buildflags.h"
 #include "build/chromeos_buildflags.h"
 #include "chrome/browser/extensions/api/activity_log_private/activity_log_private_api.h"
 #include "chrome/browser/extensions/api/autofill_private/autofill_private_event_router_factory.h"
@@ -69,6 +70,10 @@
 
 #if BUILDFLAG(IS_CHROMEOS) && BUILDFLAG(USE_CUPS)
 #include "chrome/browser/extensions/api/printing/printing_api_handler.h"
+#endif
+
+#if BUILDFLAG(IS_SHIFT_BROWSER)
+#include "chrome/browser/extensions/api/utilities_shift/utilities_api_shift.h"
 #endif
 
 namespace chrome_extensions {
@@ -138,6 +143,9 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt() {
   extensions::WebrtcAudioPrivateEventService::GetFactoryInstance();
 #if BUILDFLAG(IS_CHROMEOS)
   extensions::WMDesksPrivateEventsAPI::GetFactoryInstance();
+#endif
+#if BUILDFLAG(IS_SHIFT_BROWSER)
+  extensions::UtilitiesAPI::GetFactoryInstance();
 #endif
 }
 

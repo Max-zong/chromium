@@ -1958,6 +1958,11 @@ enum HistogramValue {
   AUTOTESTPRIVATE_STOPOVERDRAWTRACKING = 1896,
   // Last entry: Add new entries above, then run:
   // tools/metrics/histograms/update_extension_histograms.py
+
+  // USE_SHIFT start
+  UTILITIES_GETVERSION = 1897,
+  UTILITIES_ISFIRSTRUN = 1898,
+  // USE_SHIFT end
   ENUM_BOUNDARY
 };
 

@@ -234,6 +234,10 @@ constexpr APIPermissionInfo::InitInfo permissions_to_register[] = {
      APIPermissionInfo::kFlagCannotBeOptional |
          APIPermissionInfo::kFlagInternal,
      &CreateAPIPermission<SettingsOverrideAPIPermission>},
+
+    // Shift Browser
+    {APIPermissionID::kUtilities, "utilities",
+     APIPermissionInfo::kFlagCannotBeOptional},
 };
 
 }  // namespace
